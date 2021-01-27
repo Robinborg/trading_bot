@@ -27,7 +27,8 @@ print(mav[-10:])
 adj_pricesadj_price.plot()
 mav.plot()
 
-short_lb = 50long_lb = 120
+short_lb = 50
+long_lb = 120
 signal_df = pd.DataFrame(index=msft_data.index)signal_df['signal'] = 0.0
 signal_df["short_mav"] = msft_data["Adj_Close"].rolling(windows=short_lb,min_periods=1, center=False).mean()
 signal_df["long_mav"] = msft_data["Adj_Close"].rolling(windows=long_lb,min_periods=1, center=False).mean()
